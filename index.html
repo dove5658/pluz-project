@@ -3,765 +3,863 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<meta name="description" content="Pluz Project — Technology, creativity and digital innovation.">
-<title>Pluz Project | Building The Digital Future</title>
+<meta name="description" content="Pluz Project — Building the Digital Future through technology, creativity and innovation.">
+<title>Pluz Project | Building the Digital Future</title>
 
 <style>
 :root {
-  --bg:#080808;
-  --surface:#121212;
-  --surface2:#1b1b1b;
-  --text:#ffffff;
-  --muted:#aaaaaa;
-  --accent:#b8ff35;
-  --border:rgba(255,255,255,.13);
-  --header:rgba(8,8,8,.9);
+  --bg: #080b12;
+  --surface: #101622;
+  --surface2: #151e2d;
+  --text: #f5f7fb;
+  --muted: #a5afbf;
+  --accent: #70e1ff;
+  --accent2: #8b7cff;
+  --border: rgba(255,255,255,.11);
+  --shadow: 0 20px 60px rgba(0,0,0,.25);
 }
 
 body.light {
-  --bg:#f5f5f5;
-  --surface:#ffffff;
-  --surface2:#ededed;
-  --text:#111111;
-  --muted:#626262;
-  --accent:#638f00;
-  --border:rgba(0,0,0,.13);
-  --header:rgba(245,245,245,.92);
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --surface2: #eaf0f8;
+  --text: #101827;
+  --muted: #5e6b7c;
+  --accent: #087eaa;
+  --accent2: #6554d9;
+  --border: rgba(10,25,45,.12);
+  --shadow: 0 20px 60px rgba(20,40,70,.10);
 }
 
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html {
-  scroll-behavior:smooth;
-  scroll-padding-top:85px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.7;
-  overflow-x:hidden;
-  transition:background .3s,color .3s;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background .3s, color .3s;
+  overflow-x: hidden;
 }
 
 a {
-  color:inherit;
-  text-decoration:none;
-}
-
-button,input,textarea,select {
-  font:inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
-  cursor:pointer;
+  font: inherit;
 }
 
 .container {
-  width:min(1160px,90%);
-  margin:auto;
+  width: min(1160px, 90%);
+  margin: auto;
 }
 
-.section {
-  padding:110px 0;
-}
-
-.accent {
-  color:var(--accent);
+section {
+  padding: 100px 0;
+  scroll-margin-top: 85px;
 }
 
 .section-label {
-  color:var(--accent);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  margin-bottom:15px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
-.section-title {
-  font-size:clamp(35px,5vw,60px);
-  line-height:1.1;
-  letter-spacing:-2px;
-  margin-bottom:20px;
-  max-width:800px;
+.section-heading {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.15;
+  max-width: 720px;
+  margin-bottom: 18px;
+  letter-spacing: -1.5px;
 }
 
 .section-description {
-  color:var(--muted);
-  max-width:650px;
-  font-size:16px;
+  color: var(--muted);
+  max-width: 650px;
+  margin-bottom: 45px;
 }
 
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 25px;
-  background:var(--accent);
-  color:#080808;
-  border:1px solid var(--accent);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  transition:.3s;
+.gradient-text {
+  background: linear-gradient(100deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.btn:hover {
-  background:transparent;
-  color:var(--accent);
-  transform:translateY(-4px);
-}
-
-.btn-outline {
-  background:transparent;
-  color:var(--text);
-  border-color:var(--border);
-}
-
-.btn-outline:hover {
-  border-color:var(--accent);
-}
-
-/* HEADER */
+/* NAVIGATION */
 
 header {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-  background:var(--header);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
 }
 
 .navbar {
-  min-height:78px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .logo {
-  font-size:23px;
-  font-weight:900;
-  letter-spacing:-1.5px;
-  white-space:nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
-.logo span {
-  color:var(--accent);
+.logo-mark {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #07111d;
+  font-size: 20px;
+  font-weight: 900;
 }
 
 .nav-links {
-  display:flex;
-  align-items:center;
-  gap:25px;
-  list-style:none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
 }
 
 .nav-links a {
-  color:var(--muted);
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  transition:.3s;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  transition: color .2s;
 }
 
 .nav-links a:hover {
-  color:var(--accent);
+  color: var(--accent);
 }
 
 .nav-actions {
-  display:flex;
-  align-items:center;
-  gap:12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.theme-toggle,.menu-toggle {
-  width:40px;
-  height:40px;
-  border:1px solid var(--border);
-  border-radius:50%;
-  background:transparent;
-  color:var(--text);
-  font-size:18px;
+.theme-btn, .menu-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
 }
 
-.menu-toggle {
-  display:none;
+.menu-btn {
+  display: none;
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 23px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .25s, opacity .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: linear-gradient(110deg, var(--accent), var(--accent2));
+  color: #07111d;
+}
+
+.btn-outline {
+  border-color: var(--border);
+  color: var(--text);
+  background: transparent;
 }
 
 /* HERO */
 
 .hero {
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
+  min-height: 690px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse at 75% 40%,rgba(184,255,53,.14),transparent 40%),
-    linear-gradient(120deg,var(--bg),var(--surface));
+    radial-gradient(ellipse at 80% 25%, rgba(112,225,255,.13), transparent 35%),
+    radial-gradient(ellipse at 15% 80%, rgba(139,124,255,.12), transparent 35%);
 }
 
-.hero::before {
-  content:"PLUZ";
-  position:absolute;
-  right:-25px;
-  bottom:-60px;
-  font-size:clamp(160px,28vw,380px);
-  font-weight:900;
-  letter-spacing:-25px;
-  color:rgba(255,255,255,.025);
-}
-
-.hero-content {
-  position:relative;
-  z-index:2;
-  padding-top:90px;
-  max-width:900px;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 50px;
+  align-items: center;
 }
 
 .hero-tag {
-  display:inline-block;
-  padding:9px 15px;
-  border:1px solid var(--border);
-  color:var(--accent);
-  font-size:11px;
-  letter-spacing:2px;
-  margin-bottom:30px;
+  display: inline-block;
+  border: 1px solid var(--border);
+  padding: 8px 13px;
+  border-radius: 30px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
 }
 
 .hero h1 {
-  font-size:clamp(55px,9vw,110px);
-  line-height:.98;
-  letter-spacing:-6px;
-  font-weight:900;
-  margin-bottom:30px;
+  font-size: clamp(48px, 7vw, 78px);
+  line-height: 1.02;
+  letter-spacing: -4px;
+  margin-bottom: 24px;
 }
 
 .hero p {
-  max-width:600px;
-  color:var(--muted);
-  font-size:18px;
-  margin-bottom:35px;
+  max-width: 530px;
+  color: var(--muted);
+  margin-bottom: 30px;
 }
 
 .hero-buttons {
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
 }
 
-.hero-stats {
-  display:flex;
-  flex-wrap:wrap;
-  gap:50px;
-  margin-top:90px;
+.hero-art {
+  min-height: 420px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 35px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(112,225,255,.17), transparent 45%),
+    linear-gradient(145deg, var(--surface), var(--surface2));
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
-.stat strong {
-  display:block;
-  font-size:25px;
+.hero-art::before,
+.hero-art::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(112,225,255,.25);
+  border-radius: 50%;
 }
 
-.stat span {
-  color:var(--muted);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:1px;
+.hero-art::after {
+  width: 360px;
+  height: 360px;
+  border-color: rgba(139,124,255,.25);
 }
+
+.hero-logo {
+  width: 190px;
+  height: 190px;
+  border-radius: 45px;
+  display: grid;
+  place-items: center;
+  font-size: 85px;
+  font-weight: 900;
+  color: #07111d;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 90px rgba(112,225,255,.25);
+  transform: rotate(-8deg);
+  z-index: 2;
+}
+
+.floating-note {
+  position: absolute;
+  z-index: 3;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: var(--shadow);
+}
+
+.note-one { top: 55px; left: 20px; }
+.note-two { bottom: 55px; right: 20px; }
 
 /* ABOUT */
 
 .about-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.about-art {
-  min-height:420px;
+.about-visual {
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  border-radius: 25px;
   background:
-    radial-gradient(circle,rgba(184,255,53,.17),transparent 48%),
-    var(--surface);
-  border:1px solid var(--border);
-  display:grid;
-  place-items:center;
-  position:relative;
-  overflow:hidden;
+    radial-gradient(circle at 30% 30%, rgba(112,225,255,.25), transparent 35%),
+    linear-gradient(135deg, var(--surface2), var(--surface));
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
 
-.about-orbit {
-  width:250px;
-  height:250px;
-  border:1px solid var(--accent);
-  border-radius:50%;
-  animation:rotate 18s linear infinite;
-  box-shadow:0 0 60px rgba(184,255,53,.1);
-}
-
-.about-art strong {
-  position:absolute;
-  font-size:100px;
-  color:var(--accent);
-  font-weight:900;
+.about-symbol {
+  font-size: 130px;
+  font-weight: 900;
+  color: var(--accent);
+  text-shadow: 0 0 60px rgba(112,225,255,.3);
 }
 
 .about-content p {
-  color:var(--muted);
-  margin:20px 0;
+  color: var(--muted);
+  margin-bottom: 18px;
 }
 
-.about-points {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-  margin-top:30px;
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin-top: 25px;
 }
 
-.about-point {
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:18px;
+.value {
+  padding: 17px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
 }
 
-.about-point strong {
-  display:block;
-  color:var(--accent);
-  margin-bottom:5px;
+.value strong {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.value span {
+  font-size: 12px;
+  color: var(--muted);
 }
 
 /* SERVICES */
 
-.services {
-  background:var(--surface);
+.services-section {
+  background: var(--surface);
 }
 
-.service-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:50px;
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
 .service-card {
-  padding:35px 28px;
-  min-height:260px;
-  background:var(--bg);
-  border:1px solid var(--border);
-  transition:.35s;
+  padding: 30px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: 17px;
+  transition: transform .25s, border-color .25s;
 }
 
 .service-card:hover {
-  transform:translateY(-8px);
-  border-color:var(--accent);
+  transform: translateY(-7px);
+  border-color: var(--accent);
 }
 
 .service-icon {
-  width:52px;
-  height:52px;
-  display:grid;
-  place-items:center;
-  color:var(--accent);
-  border:1px solid var(--accent);
-  font-size:22px;
-  font-weight:bold;
-  margin-bottom:25px;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #07111d;
+  font-size: 23px;
+  font-weight: 900;
+  margin-bottom: 20px;
 }
 
 .service-card h3 {
-  font-size:20px;
-  margin-bottom:12px;
+  font-size: 19px;
+  margin-bottom: 10px;
 }
 
 .service-card p {
-  font-size:14px;
-  color:var(--muted);
+  font-size: 13px;
+  color: var(--muted);
 }
 
 /* PORTFOLIO */
 
 .portfolio-grid {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:22px;
-  margin-top:50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
 }
 
-.project {
-  height:340px;
-  position:relative;
-  overflow:hidden;
-  background:var(--surface);
-  border:1px solid var(--border);
-  display:flex;
-  align-items:flex-end;
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--surface);
+  transition: transform .25s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
 }
 
 .project-art {
-  position:absolute;
-  inset:0;
-  transition:transform .6s;
+  height: 240px;
+  display: grid;
+  place-items: center;
+  padding: 25px;
+  overflow: hidden;
+  position: relative;
 }
 
-.project:hover .project-art {
-  transform:scale(1.07);
+.art-blue {
+  background: linear-gradient(135deg, #102c50, #087eaa);
 }
 
-.art-one {
-  background:radial-gradient(circle at 70% 30%,#668e22,transparent 35%),linear-gradient(135deg,#101010,#273018);
+.art-purple {
+  background: linear-gradient(135deg, #251b52, #7464d8);
 }
 
-.art-two {
-  background:radial-gradient(circle at 30% 35%,#6550a2,transparent 40%),linear-gradient(135deg,#10101a,#282044);
+.art-green {
+  background: linear-gradient(135deg, #123c39, #23a68a);
 }
 
-.art-three {
-  background:radial-gradient(circle at 75% 35%,#277a88,transparent 40%),linear-gradient(135deg,#101719,#14333a);
+.art-orange {
+  background: linear-gradient(135deg, #482b23, #d77d4d);
 }
 
-.art-four {
-  background:radial-gradient(circle at 60% 30%,#986039,transparent 40%),linear-gradient(135deg,#1d1510,#38251a);
+.browser {
+  width: 90%;
+  max-width: 390px;
+  min-height: 165px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.94);
+  color: #172234;
+  box-shadow: 0 15px 35px rgba(0,0,0,.25);
+  transform: rotate(-3deg);
 }
 
-.project-art::after {
-  content:"PLUZ";
-  position:absolute;
-  right:20px;
-  top:35px;
-  font-size:100px;
-  font-weight:900;
-  color:rgba(255,255,255,.13);
+.browser-top {
+  display: flex;
+  gap: 5px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dce3ec;
+}
+
+.browser-top i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #8291a5;
+}
+
+.mock-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 17px 8px;
+}
+
+.mock-lines span {
+  display: block;
+  height: 8px;
+  border-radius: 10px;
+  background: #d9e4ef;
+  margin-bottom: 9px;
+}
+
+.mock-lines span:first-child {
+  width: 85%;
+  height: 14px;
+  background: #7088ac;
+}
+
+.mock-picture {
+  min-height: 90px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #69d9f5, #8875e9);
 }
 
 .project-info {
-  position:relative;
-  z-index:2;
-  width:100%;
-  padding:30px;
-  color:white;
-  background:linear-gradient(transparent,rgba(0,0,0,.9));
+  padding: 23px;
 }
 
-.project-info span {
-  color:var(--accent);
-  font-size:11px;
-  letter-spacing:2px;
+.project-type {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
 }
 
 .project-info h3 {
-  font-size:25px;
+  margin: 7px 0;
+  font-size: 21px;
 }
 
 .project-info p {
-  color:#cccccc;
-  font-size:13px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 /* PRICING */
 
-.pricing {
-  background:var(--surface);
+.pricing-section {
+  background: var(--surface);
 }
 
 .pricing-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
 .price-card {
-  padding:35px 28px;
-  background:var(--bg);
-  border:1px solid var(--border);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 30px;
 }
 
 .price-card.featured {
-  border-color:var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 35px rgba(112,225,255,.08);
 }
 
 .price-card h3 {
-  font-size:23px;
+  font-size: 21px;
 }
 
 .price {
-  font-size:30px;
-  font-weight:900;
-  margin:20px 0;
-}
-
-.price small {
-  font-size:12px;
-  color:var(--muted);
-  font-weight:normal;
+  color: var(--accent);
+  font-size: 25px;
+  font-weight: 900;
+  margin: 14px 0;
 }
 
 .price-card p {
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:20px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .price-card ul {
-  list-style:none;
-  margin-bottom:30px;
+  list-style: none;
+  margin: 22px 0;
 }
 
 .price-card li {
-  padding:10px 0;
-  font-size:13px;
-  border-bottom:1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .price-card li::before {
-  content:"✓";
-  color:var(--accent);
-  margin-right:10px;
+  content: "✓";
+  color: var(--accent);
+  margin-right: 9px;
+  font-weight: 900;
 }
 
 /* CONTACT */
 
+.contact-section {
+  background:
+    radial-gradient(ellipse at 10% 80%, rgba(139,124,255,.10), transparent 40%),
+    radial-gradient(ellipse at 90% 15%, rgba(112,225,255,.10), transparent 40%);
+}
+
 .contact-grid {
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:60px;
-  margin-top:50px;
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 45px;
+  align-items: start;
 }
 
-.contact-info h3 {
-  font-size:27px;
-}
-
-.contact-info p {
-  color:var(--muted);
-  margin:15px 0;
+.contact-copy p {
+  color: var(--muted);
+  margin: 15px 0;
 }
 
 .contact-note {
-  padding:22px;
-  border:1px solid var(--border);
-  background:var(--surface);
-  margin-top:30px;
-  color:var(--muted);
-  font-size:14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .contact-form {
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:35px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: var(--shadow);
 }
 
 .form-group {
-  margin-bottom:20px;
+  margin-bottom: 17px;
 }
 
 .form-group label {
-  display:block;
-  font-size:12px;
-  color:var(--muted);
-  margin-bottom:8px;
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 7px;
 }
 
 .form-group input,
-.form-group textarea,
-.form-group select {
-  width:100%;
-  padding:14px;
-  color:var(--text);
-  background:var(--bg);
-  border:1px solid var(--border);
-  outline:none;
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  font: inherit;
+  font-size: 13px;
 }
 
 .form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  border-color:var(--accent);
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
 }
 
 .form-group textarea {
-  min-height:140px;
-  resize:vertical;
+  min-height: 130px;
+  resize: vertical;
 }
 
-.form-status {
-  color:var(--accent);
-  font-size:13px;
-  margin-top:15px;
+.contact-form .btn {
+  width: 100%;
 }
 
-/* CTA */
-
-.cta {
-  padding:100px 20px;
-  text-align:center;
-  background:radial-gradient(ellipse at center,rgba(184,255,53,.14),transparent 65%),var(--surface);
-}
-
-.cta h2 {
-  font-size:clamp(38px,6vw,70px);
-  line-height:1.1;
-  margin-bottom:20px;
-}
-
-.cta p {
-  color:var(--muted);
-  margin-bottom:30px;
+.form-message {
+  display: none;
+  color: var(--accent);
+  font-size: 13px;
+  margin-top: 15px;
 }
 
 /* FOOTER */
 
 footer {
-  border-top:1px solid var(--border);
-  padding:35px 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 35px 0;
 }
 
 .footer-content {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.footer-content p,.footer-links {
-  color:var(--muted);
-  font-size:12px;
+.footer-content p {
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .footer-links {
-  display:flex;
-  gap:20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
 }
 
 /* ANIMATIONS */
 
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-12px) rotate(-5deg); }
+}
+
+.hero-logo {
+  animation: float 5s ease-in-out infinite;
+}
+
 .reveal {
-  opacity:0;
-  transform:translateY(35px);
-  transition:opacity .8s,transform .8s;
+  animation: appear .8s ease both;
 }
 
-.reveal.active {
-  opacity:1;
-  transform:translateY(0);
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes rotate {
-  from {transform:rotate(0deg);}
-  to {transform:rotate(360deg);}
-}
+/* RESPONSIVE DESIGN */
 
-/* MOBILE */
-
-@media(max-width:900px) {
+@media(max-width: 900px) {
   .nav-links {
-    gap:12px;
-  }
-
-  .about-grid {
-    gap:35px;
-  }
-
-  .service-grid,.pricing-grid {
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:700px) {
-  .section {
-    padding:80px 0;
-  }
-
-  .menu-toggle {
-    display:block;
-  }
-
-  .nav-links {
-    display:none;
-    position:absolute;
-    top:78px;
-    left:0;
-    width:100%;
-    padding:25px 5%;
-    background:var(--surface);
-    border-bottom:1px solid var(--border);
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .nav-links.show {
-    display:flex;
+    gap: 14px;
   }
 
   .nav-links a {
-    display:block;
-    padding:7px 0;
+    font-size: 11px;
   }
 
-  .nav-actions .btn {
-    display:none;
+  .hero-grid {
+    gap: 25px;
   }
 
-  .hero h1 {
-    letter-spacing:-3px;
-  }
-
-  .hero-stats {
-    gap:25px;
-    margin-top:65px;
-  }
-
-  .about-grid,.contact-grid {
-    grid-template-columns:1fr;
-  }
-
-  .about-art {
-    min-height:300px;
-  }
-
-  .service-grid,.portfolio-grid,.pricing-grid {
-    grid-template-columns:1fr;
-  }
-
-  .project {
-    height:280px;
-  }
-
-  .contact-form {
-    padding:22px;
-  }
-
-  .footer-content {
-    flex-direction:column;
-    align-items:flex-start;
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
-    animation:none!important;
-    transition:none!important;
-    scroll-behavior:auto!important;
+@media(max-width: 720px) {
+  section {
+    padding: 75px 0;
   }
 
-  .reveal {
-    opacity:1;
-    transform:none;
+  .navbar {
+    min-height: 68px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    padding: 20px 5%;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 13px 0;
+    font-size: 14px;
+  }
+
+  .nav-actions .btn {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 75px 0;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-art {
+    min-height: 320px;
+  }
+
+  .hero-logo {
+    width: 145px;
+    height: 145px;
+    font-size: 65px;
+  }
+
+  .about-visual {
+    min-height: 280px;
+  }
+
+  .cards-grid,
+  .portfolio-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media(max-width: 380px) {
+  .logo {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -769,9 +867,14 @@ footer {
 
 <body>
 
+<!-- NAVIGATION -->
 <header>
-  <nav class="container navbar">
-    <a href="#home" class="logo">PLUZ<span>PROJECT.</span></a>
+  <div class="container navbar">
+
+    <a href="#home" class="logo">
+      <span class="logo-mark">P+</span>
+      <span>PLUZ PROJECT</span>
+    </a>
 
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
@@ -783,78 +886,68 @@ footer {
     </ul>
 
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">☀</button>
-      <a href="#contact" class="btn">Get Started</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <button class="theme-btn" id="themeBtn" aria-label="Change theme">☀</button>
+      <a href="#contact" class="btn btn-primary">Get Started ↗️</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
-  </nav>
+
+  </div>
 </header>
 
 <main>
 
-<!-- HOME SECTION -->
-
+<!-- HOME -->
 <section class="hero" id="home">
-  <div class="container hero-content">
+  <div class="container hero-grid">
 
-    <span class="hero-tag">INNOVATION • TECHNOLOGY • FUTURE</span>
+    <div class="reveal">
+      <span class="hero-tag">INNOVATION • TECHNOLOGY • FUTURE</span>
 
-    <h1>
-      Building<br>
-      The <span class="accent">Digital</span><br>
-      Future.
-    </h1>
+      <h1>
+        Building<br>
+        The Digital<br>
+        <span class="gradient-text">Future.</span>
+      </h1>
 
-    <p>
-      Welcome to Pluz Project. We combine technology,
-      creativity and innovation to transform ideas into
-      meaningful digital experiences.
-    </p>
+      <p>
+        Welcome to Pluz Project. We combine technology,
+        creativity and innovation to transform ideas into
+        meaningful digital experiences.
+      </p>
 
-    <div class="hero-buttons">
-      <a href="#services" class="btn">Explore Services ↗️</a>
-      <a href="#about" class="btn btn-outline">Discover Us</a>
+      <div class="hero-buttons">
+        <a href="#services" class="btn btn-primary">Explore Services ↗️</a>
+        <a href="#about" class="btn btn-outline">Discover Us</a>
+      </div>
     </div>
 
-    <div class="hero-stats">
-      <div class="stat">
-        <strong>01</strong>
-        <span>Think Different</span>
-      </div>
-      <div class="stat">
-        <strong>02</strong>
-        <span>Create Better</span>
-      </div>
-      <div class="stat">
-        <strong>03</strong>
-        <span>Build The Future</span>
-      </div>
+    <div class="hero-art">
+      <span class="floating-note note-one">01 Think Different</span>
+      <div class="hero-logo">P+</div>
+      <span class="floating-note note-two">03 Build The Future</span>
     </div>
 
   </div>
 </section>
 
-<!-- ABOUT SECTION -->
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about-grid">
 
-<section class="section" id="about">
-  <div class="container about-grid reveal">
-
-    <div class="about-art">
-      <div class="about-orbit"></div>
-      <strong>P+</strong>
+    <div class="about-visual">
+      <div class="about-symbol">P+</div>
     </div>
 
     <div class="about-content">
       <div class="section-label">ABOUT PLUZ PROJECT</div>
 
-      <h2 class="section-title">
-        Technology is not just the future.
-        <span class="accent">It is now.</span>
+      <h2 class="section-heading">
+        Technology is not just the future. <span class="gradient-text">It is now.</span>
       </h2>
 
       <p>
-        Pluz Project is a technology-focused brand built
-        around creativity, innovation and digital possibilities.
+        Pluz Project is a technology-focused brand built around
+        creativity, innovation and digital possibilities.
       </p>
 
       <p>
@@ -863,23 +956,23 @@ footer {
         for individuals and businesses.
       </p>
 
-      <div class="about-points">
-        <div class="about-point">
+      <div class="values-grid">
+        <div class="value">
           <strong>Innovation</strong>
           <span>New ways to solve problems.</span>
         </div>
 
-        <div class="about-point">
+        <div class="value">
           <strong>Creativity</strong>
           <span>Ideas that make a difference.</span>
         </div>
 
-        <div class="about-point">
+        <div class="value">
           <strong>Technology</strong>
           <span>Building digital possibilities.</span>
         </div>
 
-        <div class="about-point">
+        <div class="value">
           <strong>Growth</strong>
           <span>Creating opportunities.</span>
         </div>
@@ -889,189 +982,87 @@ footer {
   </div>
 </section>
 
-<!-- SERVICES SECTION -->
-
-<section class="section services" id="services">
+<!-- SERVICES -->
+<section class="services-section" id="services">
   <div class="container">
 
-    <div class="reveal">
-      <div class="section-label">WHAT WE DO</div>
+    <div class="section-label">WHAT WE DO</div>
 
-      <h2 class="section-title">
-        Solutions designed for <span class="accent">tomorrow.</span>
-      </h2>
+    <h2 class="section-heading">
+      Solutions designed for <span class="gradient-text">tomorrow.</span>
+    </h2>
 
-      <p class="section-description">
-        Discover technology and digital service areas
-        that can help turn your ideas into reality.
-      </p>
-    </div>
+    <p class="section-description">
+      Discover technology and digital service areas that can
+      help turn your ideas into reality.
+    </p>
 
-    <div class="service-grid">
+    <div class="cards-grid">
 
-      <article class="service-card reveal">
+      <article class="service-card">
         <div class="service-icon">⌘</div>
         <h3>Web Development</h3>
-        <p>
-          Modern, responsive and professional websites
-          designed to create a strong digital presence.
-        </p>
+        <p>Modern, responsive and professional websites designed to create a strong digital presence.</p>
       </article>
 
-      <article class="service-card reveal">
+      <article class="service-card">
         <div class="service-icon">✳</div>
         <h3>Software Solutions</h3>
-        <p>
-          Digital tools and software concepts designed
-          to improve processes and solve problems.
-        </p>
+        <p>Digital tools and software concepts designed to improve processes and solve problems.</p>
       </article>
 
-      <article class="service-card reveal">
+      <article class="service-card">
         <div class="service-icon">AI</div>
         <h3>Artificial Intelligence</h3>
-        <p>
-          Exploring AI-powered ideas, automation and
-          intelligent digital experiences.
-        </p>
+        <p>Exploring AI-powered ideas, automation and intelligent digital experiences.</p>
       </article>
 
-      <article class="service-card reveal">
+      <article class="service-card">
         <div class="service-icon">◈</div>
         <h3>Graphic Design</h3>
-        <p>
-          Creative visual designs that help brands
-          communicate clearly and professionally.
-        </p>
+        <p>Creative visual designs that help brands communicate clearly and professionally.</p>
       </article>
 
-      <article class="service-card reveal">
+      <article class="service-card">
         <div class="service-icon">◎</div>
         <h3>Digital Solutions</h3>
-        <p>
-          Practical digital experiences and technology
-          solutions for modern needs.
-        </p>
+        <p>Practical digital experiences and technology solutions for modern needs.</p>
       </article>
 
-      <article class="service-card reveal">
+      <article class="service-card">
         <div class="service-icon">↗️</div>
         <h3>Technology Consulting</h3>
-        <p>
-          Guidance on digital opportunities, technology
-          choices and business innovation.
-        </p>
+        <p>Guidance on digital opportunities, technology choices and business innovation.</p>
       </article>
 
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO SECTION -->
-
-<section class="section" id="portfolio">
+<!-- PORTFOLIO -->
+<section id="portfolio">
   <div class="container">
 
-    <div class="reveal">
-      <div class="section-label">OUR PORTFOLIO</div>
+    <div class="section-label">OUR PORTFOLIO</div>
 
-      <h2 class="section-title">
-        Ideas transformed into <span class="accent">experiences.</span>
-      </h2>
+    <h2 class="section-heading">
+      Ideas transformed into <span class="gradient-text">experiences.</span>
+    </h2>
 
-      <p class="section-description">
-        Explore examples of digital project concepts
-        and creative directions.
-      </p>
-    </div>
+    <p class="section-description">
+      Explore examples of digital project concepts and creative directions.
+      These are illustrative concepts, not claims of completed client projects.
+    </p>
 
     <div class="portfolio-grid">
 
-      <article class="project reveal">
-        <div class="project-art art-one"></div>
-        <div class="project-info">
-          <span>WEB DEVELOPMENT</span>
-          <h3>Business Website</h3>
-          <p>A modern digital business experience.</p>
-        </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="project-art art-two"></div>
-        <div class="project-info">
-          <span>SOFTWARE</span>
-          <h3>Digital Platform</h3>
-          <p>A concept for a modern online platform.</p>
-        </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="project-art art-three"></div>
-        <div class="project-info">
-          <span>ARTIFICIAL INTELLIGENCE</span>
-          <h3>AI Innovation</h3>
-          <p>Exploring intelligent digital experiences.</p>
-        </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="project-art art-four"></div>
-        <div class="project-info">
-          <span>CREATIVE DESIGN</span>
-          <h3>Brand Identity</h3>
-          <p>Creative visual identity concepts.</p>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- PRICING SECTION -->
-
-<section class="section pricing" id="pricing">
-  <div class="container">
-
-    <div class="reveal">
-      <div class="section-label">OUR PRICING</div>
-
-      <h2 class="section-title">
-        The right solution.
-        <span class="accent">The right value.</span>
-      </h2>
-
-      <p class="section-description">
-        Every project is different. Choose a starting
-        package and discuss your requirements with us.
-      </p>
-    </div>
-
-    <div class="pricing-grid">
-
-      <article class="price-card reveal">
-        <h3>Starter</h3>
-        <div class="price">Custom <small>quotation</small></div>
-
-        <p>For individuals and small businesses getting started.</p>
-
-        <ul>
-          <li>Project consultation</li>
-          <li>Basic digital solution</li>
-          <li>Responsive design</li>
-          <li>Project support</li>
-        </ul>
-
-        <a href="#contact" class="btn btn-outline">Select Package</a>
-      </article>
-
-      <article class="price-card featured reveal">
-        <h3>Professional</h3>
-        <div class="price">Custom <small>quotation</small></div>
-
-        <p>For growing brands seeking a stronger digital presence.</p>
-
-        <ul>
-          <li>Advanced project planning</li>
-          <li>Professional design</li>
-          <li>Advanced features</li>
-          <li>Responsive experience</li>
+      <article class="project-card">
+        <div class="project-art art-blue">
+          <div class="browser">
+            <div class="browser-top"><i></i><i></i><i></i></div>
+            <div class="mock-content">
+              <div class="mock-lines">
+                <span></span><span></span><span></span>
+                <span></span>
+              </div>
+              <div class="mock-picture"></div>
